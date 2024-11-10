@@ -1,3 +1,33 @@
-h1 {
-    color: salmon;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+    color: rgb(199, 165, 55);
+    font-family: Oswald, Arial;
+}
+
+.nav{ 
+    background-color: rgb(12, 12, 12);
+    box-shadow: 0 3px 5px  rgba(199, 165, 55, 0.15);
+}
+
+.avalehe-link{
+    font-size: 50px;
+    color: rgb(199, 165, 55);
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.2s;
+}
+
+.avalehe-link:hover{
+    color: rgb(226, 202, 123);
+} 
+
+body{
+    background-color: rgb(15, 15, 15);
 }
