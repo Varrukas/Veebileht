@@ -4,14 +4,14 @@ Rühmaliikmed: Marek, Marten, Patrick
 
 Tööprotsess:
 
-+
-Õppeseminaridel käidud, oskuste omandamine projektiks.
-Loodud on vajalikud failid ja tehtud linkimised.
-Lehekülje osad on ära jaotatud tiimiliikmete vahel ning iga liige kasutab eraldi branchi oma lehe jaoks.
++ Tehtud:
+    + Õppeseminaridel käidud, oskuste omandamine projektiks.
+    + Loodud on vajalikud failid ja tehtud linkimised.
+    + Lehekülje osad on ära jaotatud tiimiliikmete vahel ning iga liige kasutab eraldi branchi oma lehe jaoks.
 
--
-Pärast suuri edusamme teha mergimised.
-Vaja lõpetada struktuur ja kujundus ning siis luua funktsionaalsus JS abil.
+- Tegemata:
+    + Pärast suuri edusamme teha mergimised.
+    + Vaja lõpetada struktuur ja kujundus ning siis luua funktsionaalsus JS abil.
 
 
 Käitumisnormid:
