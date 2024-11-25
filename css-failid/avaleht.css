@@ -1,15 +1,19 @@
 body {
-  margin: 0;
+  margin-left: 265px;
+  background-color: rgb(243, 243, 253);
 }
 .container {
-  display: flex;
+  text-align: Roboto, Arial;
 }
 
 .sidebar {
   color: white;
   width: 250px;
-  height: 700px;
   background-color: #2b2f3a;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
 }
 
 .sidebar a {
@@ -34,7 +38,48 @@ body {
   text-align: center;
 }
 
-.main-content {
-  flex: 1;
- background-color: beige;
+.main-content-sissejuhatus {
+  text-align: center;
+  border-bottom-width: 1.5px;
+  border-bottom-style: solid;
+  border-bottom-color: #c5c5c5a6;
+}
+
+.main-intro-box {
+  display: inline-block;
+  border-width: 1.5px;
+  border-style: solid;
+  border-color: #c5c5c5a6;
+  border-radius: 4px;
+  font-size: 13px;
+  position: relative;
+  background-color: white;
+  padding-left: 62px;
+  padding-right: 7px;
+  text-align: right;
+  margin-top: 15px;
+  margin-right: 7px;
+  box-shadow: 2px 2px 10px rgb(141, 141, 141);
+}
+
+.intro-box-title {
+  color: rgb(80, 79, 79);
+}
+
+.intro-box-money {
+  color: black;
+}
+
+.intro-box-logo {
+  width: 50px;
+}
+
+.intro-box-div {
+  position: absolute;
+  left: 6px;
+  top: 10px;
+  bottom: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
 }
