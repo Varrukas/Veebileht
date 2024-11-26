@@ -9,5 +9,45 @@
 }
 
 body{
-    background-color: rgb(14, 14, 14);
+    background-color: rgb(27, 27, 27);
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.content{
+    height: 1000px;
+    width: 1500px;
+    background-color: rgb(231, 231, 231);
+}
+
+.sidebar{
+    background-color: burlywood;
+    width: 300px;
+    height: 1000px;
+}
+
+.links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.links a{
+    text-decoration: none;
+    margin-top: 40px;
+    color: rgb(133, 133, 133);
+    transition: all 0.3s;
+    font-size: 30px;
+    display: inline-block;
+}
+
+.links a:hover{
+    font-size: 40px;
+    color: rgb(216, 216, 216);
 }
