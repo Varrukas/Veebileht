@@ -10,6 +10,7 @@
 
 body{
     background-color: rgb(27, 27, 27);
+    font-family: Libre Franklin, Arial;
 }
 
 .container{
@@ -23,12 +24,15 @@ body{
     height: 1000px;
     width: 1500px;
     background-color: rgb(231, 231, 231);
+    border-radius: 30px;
 }
 
 .sidebar{
     background-color: burlywood;
     width: 300px;
     height: 1000px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
 }
 
 .links{
@@ -41,7 +45,8 @@ body{
 .links a{
     text-decoration: none;
     margin-top: 40px;
-    color: rgb(133, 133, 133);
+    margin-bottom: 40px;
+    color: rgb(32, 32, 32);
     transition: all 0.3s;
     font-size: 30px;
     display: inline-block;
