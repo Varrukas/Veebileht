@@ -29,7 +29,20 @@
 .add-expense-button{
     font-size: 30px;
     border-radius: 10px;
-    padding: 10px 25px;
+    padding: 15px 35px;
+    text-align: center;
     cursor: pointer;
     border: none;
+    background-color: rgb(212, 182, 143);
+    box-shadow: 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.add-expense-button:hover{
+    background-color: rgb(189, 163, 128);
+}
+
+.add-expense-button:active{
+    background-color: rgb(189, 163, 128);
+    box-shadow: 0 4px rgba(0, 0, 0, 0.5);
+    transform: translateY(4px);
 }
