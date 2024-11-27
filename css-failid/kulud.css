@@ -1,0 +1,35 @@
+.introduction{
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    font-size: 40px;
+}
+
+.expense-inputs{
+    margin-left: 30px;
+    font-size: 35px;
+}
+
+.expense-value{
+    font-size: 30px;
+    border-radius: 10px;
+    border: solid 2px;
+    padding: 5px 10px;
+    margin-bottom: 25px;
+}
+
+.expense-description{
+    font-size: 30px;
+    border-radius: 10px;
+    border: solid 2px;
+    padding: 5px 10px;
+    margin-bottom: 25px;
+}
+
+.add-expense-button{
+    font-size: 30px;
+    border-radius: 10px;
+    padding: 10px 25px;
+    cursor: pointer;
+    border: none;
+}
