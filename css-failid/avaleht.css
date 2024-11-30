@@ -1,54 +1,64 @@
-  .content-töölaud {
-    width: 100%;
-  }
+.content-töölaud {
+  width: 80%;
+}
 
-  .introduction {
-    margin-top: 15px;
-    margin-left: 25px;
-    margin-right: 25px;
-    padding-bottom: 25px;
-    font-size: 35px;
-    font-weight: bold;
-    text-align: center;
-    border-bottom: solid 0.1px;
-    border-bottom-color: rgb(179, 177, 177);
-  }
-  
-  .budget-input {
-    margin-left: 25px;
-    font-size: 35px;
-  }
+.introduction {
+  margin-top: 15px;
+  margin-left: 25px;
+  margin-right: 25px;
+  padding-bottom: 25px;
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: solid 0.1px;
+  border-bottom-color: rgb(179, 177, 177);
+}
 
-  .budget-value {
-    font-size: 30px;
-    border: solid 2px;
-    border-radius: 15px;
-    padding: 7px 10px;
-    margin-top: 15px;
-  }
+.budget-input {
+  margin-top: 30px;
+  font-size: 35px;
+  text-align: center;
+}
 
-  .budget-submit {
-    font-size: 35px;
-    background-color: burlywood;
-    border: none;
-    border-radius: 12px;
-    margin-top: 15px;
-    padding: 5px 10px;
-    transition: all 0.3s;
-    box-shadow: 2px 1px 2px;
-  }
+.budget-value {
+  font-size: 30px;
+  border: solid 2px;
+  border-radius: 15px;
+  padding: 7px 10px;
+  margin-top: 15px;
+}
 
-  .budget-submit:hover{
-    font-size: 40px;
-    background-color: rgb(224, 198, 163);
-  }
-  
+.budget-submit, .reset-data{
+  font-size: 35px;
+  background-color: burlywood;
+  border: none;
+  border-radius: 12px;
+  margin-top: 15px;
+  padding: 5px 10px;
+  transition: all 0.3s;
+  box-shadow: 2px 1px 2px;
+}
+
+.budget-submit:hover , .reset-data:hover{
+  font-size: 40px;
+  background-color: rgb(224, 198, 163);
+}
+
+.reset-data {
+  margin-left: 5px;
+}
+
+.all-features {
+  background-color: #ddd;
+  margin: 30px 15px 0px;
+  border-radius: 25px;
+}
 .feature {
   padding: 40px;
   text-align: center;
 }
 
-.töölaud-footer {
+.footer {
   display: flex;
   flex-direction: column;
   background-color: rgb(0, 0, 0);
