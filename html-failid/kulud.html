@@ -16,19 +16,25 @@
             <nav class="sidebar">
                 <div class="links">
                     <a href="../index.html">TÖÖLAUD</a>
-                    <a href="/html-failid/kulud.html">KULUD</a>
+                    <a href="/html-failid/kulud.html">KULUD/TULUD</a>
                     <a href="/html-failid/aruanne.html">ARUANNE</a>
                 </div>
             </nav>
             <div class="content-kulud">
                 <!-- Siin on iga lehekülje ainulaadne sisu -->
                 <h1 class="introduction">Kulude sisestamine</h1>
-                <form class="expense-inputs">
+                <form class="profit-expense-inputs">
+                    <label for="profit-value">Sisesta tulu summa:</label> <br>
+                    <input type="number" step="any" required class="profit-value value-style" placeholder="Peab olema arv"> <br>
+                    <label for="profit-description">Kirjeldus:</label> <br>
+                    <input type="text" required class="profit-description description" placeholder="nt. Dividendid"> <br>
+                    <button type="submit" class="add-profit-button buttons-style">LISA TULU</button> <br>
+
                     <label for="expense-value">Sisesta kulu summa:</label> <br>
-                    <input type="number" step="any" required class="expense-value" placeholder="Peab olema arv"> <br>
+                    <input type="number" step="any" required class="expense-value value-style" placeholder="Peab olema arv"> <br>
                     <label for="expense-description">Kirjeldus:</label> <br>
-                    <input type="text" required class="expense-description" placeholder="nt. Võlg"> <br>
-                    <button type="submit" class="add-expense-button">LISA</button>
+                    <input type="text" required class="expense-description description" placeholder="nt. Võlg"> <br>
+                    <button type="submit" class="add-expense-button buttons-style">LISA KULU</button>
                 </form>
                 
             </div>
@@ -36,4 +42,4 @@
     </div>
     <script src="../js_failid/script.js"></script>
 </body>
-</html>
+</html> 

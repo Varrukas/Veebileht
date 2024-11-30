@@ -12,12 +12,12 @@ input::-webkit-inner-spin-button {
     font-size: 40px;
 }
 
-.expense-inputs{
+.profit-expense-inputs{
     margin-left: 30px;
     font-size: 35px;
 }
 
-.expense-value{
+.value-style{
     font-size: 30px;
     border-radius: 10px;
     border: solid 2px;
@@ -25,7 +25,7 @@ input::-webkit-inner-spin-button {
     margin-bottom: 25px;
 }
 
-.expense-description{
+.description{
     font-size: 30px;
     border-radius: 10px;
     border: solid 2px;
@@ -33,7 +33,7 @@ input::-webkit-inner-spin-button {
     margin-bottom: 25px;
 }
 
-.add-expense-button{
+.buttons-style{
     font-size: 30px;
     border-radius: 10px;
     padding: 15px 35px;
@@ -42,13 +42,14 @@ input::-webkit-inner-spin-button {
     border: none;
     background-color: rgb(212, 182, 143);
     box-shadow: 0 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
 }
 
-.add-expense-button:hover{
+.buttons-style:hover{
     background-color: rgb(189, 163, 128);
 }
 
-.add-expense-button:active{
+.buttons-style:active{
     background-color: rgb(189, 163, 128);
     box-shadow: 0 4px rgba(0, 0, 0, 0.5);
     transform: translateY(4px);
