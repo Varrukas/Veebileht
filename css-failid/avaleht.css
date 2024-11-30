@@ -1,0 +1,95 @@
+  .content-töölaud {
+    width: 100%;
+  }
+
+  .introduction {
+    margin-top: 15px;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding-bottom: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: solid 0.1px;
+    border-bottom-color: rgb(179, 177, 177);
+  }
+  
+  .budget-input {
+    margin-left: 25px;
+    font-size: 35px;
+  }
+
+  .budget-value {
+    font-size: 30px;
+    border: solid 2px;
+    border-radius: 15px;
+    padding: 7px 10px;
+    margin-top: 15px;
+  }
+
+  .budget-submit {
+    font-size: 35px;
+    background-color: burlywood;
+    border: none;
+    border-radius: 12px;
+    margin-top: 15px;
+    padding: 5px 10px;
+    transition: all 0.3s;
+    box-shadow: 2px 1px 2px;
+  }
+
+  .budget-submit:hover{
+    font-size: 40px;
+    background-color: rgb(224, 198, 163);
+  }
+
+  .transaction {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+
+  .transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    margin-right: 25px;
+  }
+  
+  .transaction-table th, .transaction-table td {
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    padding: 10px;
+  }
+  
+  .transaction-table tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .income {
+    color: green;
+  }
+  
+  .expense {
+    color: red;
+  }
+  
+.feature {
+  padding: 40px;
+  text-align: center;
+}
+
+.töölaud-footer {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(0, 0, 0);
+  height: 75px;
+  text-align: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.copyright-text {
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+}

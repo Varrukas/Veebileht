@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kulud</title>
+    <link rel="stylesheet" href="../css-failid/kulud.css" type="text/css">
+    <link rel="stylesheet" href="/css-failid/ühine.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital@0;1&family=Oswald:wght@500&family=Source+Code+Pro:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <nav class="sidebar">
+                <div class="links">
+                    <a href="../index.html">TÖÖLAUD</a>
+                    <a href="/html-failid/kulud.html">KULUD</a>
+                    <a href="/html-failid/aruanne.html">ARUANNE</a>
+                </div>
+            </nav>
+            <div class="content-kulud">
+                <!-- Siin on iga lehekülje ainulaadne sisu -->
+                <h1 class="introduction">Kulude sisestamine</h1>
+                <form class="expense-inputs">
+                    <label for="expense-value">Sisesta kulu summa:</label> <br>
+                    <input type="number" step="any" required class="expense-value" placeholder="Peab olema arv"> <br>
+                    <label for="expense-description">Kirjeldus:</label> <br>
+                    <input type="text" required class="expense-description" placeholder="nt. Võlg"> <br>
+                    <button type="submit" class="add-expense-button">LISA</button>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
