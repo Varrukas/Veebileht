@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avaleht</title>
-    <link rel="stylesheet" href="/css-failid/avaleht.css" type="text/css">
+    <link rel="stylesheet" href="/css-failid/avaleht.css"type="text/css">
     <link rel="stylesheet" href="/css-failid/ühine.css" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,68 @@
             </nav>
             <div class="content-töölaud">
                 <!-- Siin on iga lehekülje ainulaadne sisu -->
-                <h2>Eelarve sisestus ja tutvustus</h2>
+                <h2 class="introduction">Jälgige oma kulutusi pingutusteta</h2>
+
+                <!-- Motiveeriv tekst, miks kasutada meie veebilehte -->
+                <div class="feature">
+                    <h3>Track Expenses</h3>
+                    <p>Keep track of every penny you spend.</p>
+                </div>
+                <div class="feature">
+                    <h3>Set Budgets</h3>
+                    <p>Plan ahead with monthly budgets.</p>
+                </div>
+                <div class="feature">
+                    <h3>View Insights</h3>
+                    <p>Understand your spending patterns.</p>
+                </div>
+                
+                <!-- Tabel, kust näeb sissetulekuid ja väljaminekuid -->
+                <div class="transaction">
+                    <h2 class="transaction-table-intro">Hiljutised tehingud</h2>
+                    <table class="transaction-table">
+                        <thead>
+                            <tr>
+                                <th>Kuupäev</th>
+                                <th>Kategooria</th>
+                                <th>Kirjeldus</th>
+                                <th>Kogus</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>01-11-2024</td>
+                                <td>Toidukaubad</td>
+                                <td>Nädalased toidud</td>
+                                <td class="expense">-$100</td>
+                            </tr>
+                            <tr>
+                                <td>02-11-2024</td>
+                                <td>Palk</td>
+                                <td>Palgapäev</td>
+                                <td class="income">$3,000</td>
+                            </tr>
+                            <tr>
+                                <td>03-11-2024</td>
+                                <td>Kommunaal</td>
+                                <td>Elektriarve</td>
+                                <td class="expense">-$50</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Eelarve sisestuseks -->
+                <form class="budget-input">
+                    <label for="budget-value">Sisesta oma eelarve:</label><br>
+                    <input type="number" required class="budget-value" placeholder="123456" step=any min="0"><br>
+                    <button type="submit" class="budget-submit">Lisa</button>
+                </form>
+
+                <!-- Veebilehe jalam -->
+                <div class="töölaud-footer">
+                    <p class="copyright-text">Copyright © 2024 MMP, Eesti. Kõik õigused kaitstud.</p>
+                </div>
             </div>
         </div>
     </div>
