@@ -1,0 +1,30 @@
+.transaction {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+
+  .transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    margin-right: 25px;
+  }
+  
+  .transaction-table th, .transaction-table td {
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    padding: 10px;
+  }
+  
+  .transaction-table tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .income {
+    color: green;
+  }
+  
+  .expense {
+    color: red;
+  }
