@@ -6,8 +6,8 @@ function initializeData() {
         localStorage.setItem('budget', '0');
     }
 
-    if (localStorage.getItem('expenses') === null) {
-        localStorage.setItem('expenses', JSON.stringify([]));
+    if (localStorage.getItem('transactions') === null) {
+        localStorage.setItem('transactions', JSON.stringify([]));
     }
 }
 
@@ -18,6 +18,13 @@ function handleBudgetSubmission() {
         budgetForm.addEventListener('submit', function (e) {
             e.preventDefault();
             const budgetValue = document.querySelector('.budget-value').value;
+
+            // Input validation
+            if (!budgetValue || isNaN(budgetValue) || parseFloat(budgetValue) <= 0) {
+                alert('Palun sisestage korrektne eelarve summa.');
+                return;
+            }
+
             localStorage.setItem('budget', budgetValue);
             alert('Eelarve on salvestatud!');
             budgetForm.reset();
@@ -41,24 +48,71 @@ function handleDataReset() {
 
 // Function to handle expense submission on kulud.html
 function handleExpenseSubmission() {
-    const expenseForm = document.querySelector('.expense-inputs');
+    const expenseForm = document.querySelector('.profit-expense-inputs');
     if (expenseForm) {
-        expenseForm.addEventListener('submit', function (e) {
+        // Handle adding expense
+        const addExpenseButton = document.querySelector('.add-expense-button');
+        addExpenseButton.addEventListener('click', function (e) {
             e.preventDefault();
             const expenseValue = document.querySelector('.expense-value').value;
-            const expenseDescription = document.querySelector('.expense-description').value;
+            const expenseDescription = document.querySelector('.expense-description').value.trim();
+
+            // Input validation for expense
+            if (!expenseValue || isNaN(expenseValue) || parseFloat(expenseValue) <= 0) {
+                alert('Palun sisestage korrektne kulu summa.');
+                return;
+            }
+
+            if (!expenseDescription) {
+                alert('Palun sisestage kulu kirjeldus.');
+                return;
+            }
 
             const newExpense = {
                 date: new Date().toLocaleDateString('et-EE'),
                 description: expenseDescription,
                 amount: parseFloat(expenseValue),
+                type: 'expense',
             };
 
-            let expenses = JSON.parse(localStorage.getItem('expenses'));
-            expenses.push(newExpense);
-            localStorage.setItem('expenses', JSON.stringify(expenses));
+            let transactions = JSON.parse(localStorage.getItem('transactions'));
+            transactions.push(newExpense);
+            localStorage.setItem('transactions', JSON.stringify(transactions));
 
             alert('Kulu on lisatud!');
+            expenseForm.reset();
+        });
+
+        // Handle adding income
+        const addProfitButton = document.querySelector('.add-profit-button');
+        addProfitButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            const profitValue = document.querySelector('.profit-value').value;
+            const profitDescription = document.querySelector('.profit-description').value.trim();
+
+            // Input validation for income
+            if (!profitValue || isNaN(profitValue) || parseFloat(profitValue) <= 0) {
+                alert('Palun sisestage korrektne tulu summa.');
+                return;
+            }
+
+            if (!profitDescription) {
+                alert('Palun sisestage tulu kirjeldus.');
+                return;
+            }
+
+            const newIncome = {
+                date: new Date().toLocaleDateString('et-EE'),
+                description: profitDescription,
+                amount: parseFloat(profitValue),
+                type: 'income',
+            };
+
+            let transactions = JSON.parse(localStorage.getItem('transactions'));
+            transactions.push(newIncome);
+            localStorage.setItem('transactions', JSON.stringify(transactions));
+
+            alert('Tulu on lisatud!');
             expenseForm.reset();
         });
     }
@@ -68,23 +122,24 @@ function handleExpenseSubmission() {
 function displayReport() {
     const transactionTableBody = document.querySelector('.transaction-table tbody');
     if (transactionTableBody) {
-        const expenses = JSON.parse(localStorage.getItem('expenses'));
+        const transactions = JSON.parse(localStorage.getItem('transactions'));
         transactionTableBody.innerHTML = '';
 
-        expenses.forEach(function (expense) {
+        transactions.forEach(function (transaction) {
             const row = document.createElement('tr');
 
             const dateCell = document.createElement('td');
-            dateCell.textContent = expense.date;
+            dateCell.textContent = transaction.date;
             row.appendChild(dateCell);
 
             const descriptionCell = document.createElement('td');
-            descriptionCell.textContent = expense.description;
+            descriptionCell.textContent = transaction.description;
             row.appendChild(descriptionCell);
 
             const amountCell = document.createElement('td');
-            amountCell.textContent = `-${expense.amount}€`;
-            amountCell.classList.add('expense');
+            const formattedAmount = transaction.type === 'expense' ? `-${transaction.amount}€` : `${transaction.amount}€`;
+            amountCell.textContent = formattedAmount;
+            amountCell.classList.add(transaction.type === 'expense' ? 'expense' : 'income');
             row.appendChild(amountCell);
 
             transactionTableBody.appendChild(row);
