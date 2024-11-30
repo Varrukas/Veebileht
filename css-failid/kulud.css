@@ -23,6 +23,11 @@ input::-webkit-inner-spin-button {
     border: solid 2px;
     padding: 10px 15px;
     margin-bottom: 25px;
+    transition: all 0.2s;
+}
+
+.value-style:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
 
 .description{
@@ -31,6 +36,11 @@ input::-webkit-inner-spin-button {
     border: solid 2px;
     padding: 10px 15px;
     margin-bottom: 25px;
+    transition: all 0.2s;
+}
+
+.description:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
 
 .buttons-style{
@@ -43,6 +53,7 @@ input::-webkit-inner-spin-button {
     background-color: rgb(212, 182, 143);
     box-shadow: 0 8px rgba(0, 0, 0, 0.3);
     margin-bottom: 30px;
+    transition: all 0.3s;
 }
 
 .buttons-style:hover{
