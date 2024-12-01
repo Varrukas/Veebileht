@@ -5,6 +5,10 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+.content-kulud{
+    position: relative;
+}
+
 .introduction{
     margin-top: 30px;
     margin-left: 30px;
@@ -12,7 +16,7 @@ input::-webkit-inner-spin-button {
     font-size: 40px;
     border-bottom: solid 0.1px;
     border-bottom-color: rgb(179, 177, 177);
-    width: 1000px;
+    width: 1170px;
 }
 
 .profit-expense-inputs{
@@ -67,4 +71,15 @@ input::-webkit-inner-spin-button {
     background-color: rgb(189, 163, 128);
     box-shadow: 0 4px rgba(0, 0, 0, 0.5);
     transform: translateY(4px);
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 15px;
 }
