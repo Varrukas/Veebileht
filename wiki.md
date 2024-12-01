@@ -8,10 +8,15 @@ Tööprotsess:
     + Õppeseminaridel käidud, oskuste omandamine projektiks.
     + Loodud on vajalikud failid ja tehtud linkimised.
     + Lehekülje osad on ära jaotatud tiimiliikmete vahel ning iga liige kasutab eraldi branchi oma lehe jaoks.
-
-- Tegemata:
     + Pärast suuri edusamme teha mergimised.
     + Vaja lõpetada struktuur ja kujundus ning siis luua funktsionaalsus JS abil.
+
+- Tegemata:
+    + Teha viimased viimistlused stiilile.
+    + Panna leht üles
+    + Esitada kõik vajalik
+
+
 
 
 Käitumisnormid:
