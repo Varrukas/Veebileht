@@ -87,4 +87,5 @@ input::-webkit-inner-spin-button {
     left: 0;
     right: 0;
     border-bottom-right-radius: 27px;
+    font-size: 17px;
 }
