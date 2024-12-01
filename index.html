@@ -25,13 +25,18 @@
                 <!-- Sissejuhatav tekst -->
                 <h2 class="introduction">Jälgige oma kulutusi pingutusteta</h2>
 
-                <!-- Eelarve sisestuseks -->
-                <form class="budget-input">
-                    <label for="budget-value">Sisesta oma eelarve:</label><br>
-                    <input type="number" required class="budget-value" placeholder="123456" step=any min="0"><br>
-                    <button type="submit" class="budget-submit">Lisa</button>
-                    <button class="reset-data">Lähtesta Andmed</button>
+                <!-- Säästmise kalkulaator -->
+                <form class="savings-input">
+                    <label for="monthly-income">Sisesta oma kuu sissetulek (€):</label><br>
+                    <input type="number" class="input-field income" placeholder="Näiteks: 1500" step="any" min="0" required><br>
+                    <label for="savings-goal">Sisesta oma säästmise eesmärk (€):</label><br>
+                    <input type="number" class="input-field goal" placeholder="Näiteks: 5000" step="any" min="0" required><br>
+                    <label for="savings-percent">Protsent sissetulekust säästmiseks (%):</label><br>
+                    <input type="number" class="input-field percent" placeholder="Näiteks: 20" step="any" min="0" max="100" required><br>
+                    <button type="button" class="calculate-button">Arvuta</button>
                 </form>
+                <!-- Tulemuse kuvamiseks koht -->
+                <div class="result"></div>
                 
                 <!-- Motiveeriv tekst, miks kasutada meie veebilehte -->
                 <div class="all-features">
