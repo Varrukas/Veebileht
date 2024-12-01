@@ -205,3 +205,34 @@ document.addEventListener('DOMContentLoaded', function () {
     handleExpenseSubmission();
     displayReport();
 });
+
+// Index lehel oleva säästukalkulaatori js
+document.querySelector('.calculate-button').addEventListener('click', function () {
+    // Võta sisendväljade väärtused
+    const income = parseFloat(document.querySelector('.income').value);
+    const goal = parseFloat(document.querySelector('.goal').value);
+    const percent = parseFloat(document.querySelector('.percent').value);
+
+    // Kontrolli, kas kõik sisendid on korrektsed
+    if (isNaN(income) || isNaN(goal) || isNaN(percent) || income <= 0 || goal <= 0 || percent <= 0 || percent > 100) {
+        document.querySelector('.result').innerHTML = 'Palun sisesta korrektsed väärtused!';
+        return;
+    }
+
+    // Arvuta säästetav summa kuus
+    const savingsPerMonth = (income * percent) / 100;
+
+    if (savingsPerMonth <= 0) {
+        document.querySelector('.result').innerHTML = 'Säästetav summa peab olema suurem kui null!';
+        return;
+    }
+
+    // Arvuta kuude arv
+    const monthsNeeded = Math.ceil(goal / savingsPerMonth);
+
+    // Kuvab tulemuse veebilehel
+    document.querySelector(".result").innerHTML = `
+        Kui säästate ${percent}% oma sissetulekust (€${savingsPerMonth.toFixed(2)} kuus), 
+        saavutate oma eesmärgi €${goal} umbes ${monthsNeeded} kuuga.
+    `;
+});

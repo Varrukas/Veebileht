@@ -15,40 +15,40 @@
   border-bottom-color: rgb(179, 177, 177);
 }
 
-.budget-input {
-  margin-top: 95px;
-  margin-bottom: 95px;
-  font-size: 35px;
+.savings-input {
+  margin-top: 35px;
+  margin-bottom: 50px;
   text-align: center;
 }
 
-.budget-value {
-  font-size: 30px;
-  border: solid 2px;
-  border-radius: 15px;
-  padding: 7px 10px;
-  margin-top: 15px;
+.input-field {
+  font-size: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0;
+  width: 60%;
 }
 
-.budget-submit, .reset-data{
+.calculate-button, .reset-data{
   font-size: 35px;
   background-color: burlywood;
   border: none;
   border-radius: 12px;
   margin-top: 15px;
-  padding: 5px 10px;
+  padding: 10px 15px;
   transition: all 0.3s;
   box-shadow: 2px 1px 2px;
   cursor: pointer;
 }
 
-.budget-submit:hover , .reset-data:hover{
-  font-size: 40px;
-  background-color: rgb(224, 198, 163);
+.result {
+  font-size: 18px;
+  text-align: center;
 }
 
-.reset-data {
-  margin-left: 5px;
+.calculate-button:hover, .reset-data:hover{
+  background-color: rgb(224, 198, 163);
 }
 
 .all-features {
