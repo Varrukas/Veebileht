@@ -74,14 +74,6 @@ input::-webkit-inner-spin-button {
 }
 
 .footer{
-    /* position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding: 15px; */
     display: flex;
     flex-direction: column;
     background-color: rgb(0, 0, 0);
