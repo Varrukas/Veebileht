@@ -10,6 +10,9 @@ input::-webkit-inner-spin-button {
     margin-left: 30px;
     margin-bottom: 30px;
     font-size: 40px;
+    border-bottom: solid 0.1px;
+    border-bottom-color: rgb(179, 177, 177);
+    width: 1000px;
 }
 
 .profit-expense-inputs{
