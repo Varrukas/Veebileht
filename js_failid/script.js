@@ -119,33 +119,83 @@ function handleExpenseSubmission() {
 }
 
 // Function to display data on aruanne.html
+// Function to display data as a doughnut chart on aruanne.html
+// Function to display data as a doughnut chart on aruanne.html
+// Function to display data as a bar chart on aruanne.html
 function displayReport() {
-    const transactionTableBody = document.querySelector('.transaction-table tbody');
-    if (transactionTableBody) {
-        const transactions = JSON.parse(localStorage.getItem('transactions'));
-        transactionTableBody.innerHTML = '';
-
-        transactions.forEach(function (transaction) {
-            const row = document.createElement('tr');
-
-            const dateCell = document.createElement('td');
-            dateCell.textContent = transaction.date;
-            row.appendChild(dateCell);
-
-            const descriptionCell = document.createElement('td');
-            descriptionCell.textContent = transaction.description;
-            row.appendChild(descriptionCell);
-
-            const amountCell = document.createElement('td');
-            const formattedAmount = transaction.type === 'expense' ? `-${transaction.amount}€` : `${transaction.amount}€`;
-            amountCell.textContent = formattedAmount;
-            amountCell.classList.add(transaction.type === 'expense' ? 'expense' : 'income');
-            row.appendChild(amountCell);
-
-            transactionTableBody.appendChild(row);
-        });
+    const chartCanvas = document.getElementById('doughnutChart'); // Graafiku lõuend (muuda vastavalt HTML-i id-le)
+    if (!chartCanvas) {
+        console.error("Graafiku jaoks vajalik <canvas> element puudub!");
+        return;
     }
+
+    // Andmete saamine localStorage-st
+    const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+
+    // Andmete ettevalmistamine
+    let income = 0;
+    let expense = 0;
+
+    transactions.forEach(transaction => {
+        if (transaction.type === 'income') {
+            income += parseFloat(transaction.amount);
+        } else if (transaction.type === 'expense') {
+            expense += parseFloat(transaction.amount);
+        }
+    });
+
+    // Graafiku loomine
+    const ctx = chartCanvas.getContext('2d');
+    if (window.barChartInstance) {
+        window.barChartInstance.destroy(); // Eemalda vana graafik, kui see on olemas
+    }
+
+    window.barChartInstance = new Chart(ctx, {
+        type: 'bar', // Kasutame ribadiagrammi
+        data: {
+            labels: ['Tulu', 'Kulu'], // Telje sildid
+            datasets: [
+                {
+                    label: 'Tehingud (€)',
+                    data: [income, expense], // Andmed: tulu ja kulu
+                    backgroundColor: ['#4CAF50', '#FF5722'], // Tulu: roheline, Kulu: punane
+                    borderColor: ['#388E3C', '#D32F2F'],
+                    borderWidth: 1,
+                },
+            ],
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true, // Y-telg algab nullist
+                },
+            },
+            plugins: {
+                legend: {
+                    position: 'top', // Legendi asukoht
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function (context) {
+                            const label = context.label || '';
+                            const value = context.raw || 0;
+                            return `${label}: ${value.toFixed(2)}€`;
+                        },
+                    },
+                },
+            },
+        },
+    });
 }
+
+// Kutsu funktsiooni peale DOM-i laadimist
+document.addEventListener('DOMContentLoaded', displayReport);
+
+
+
+
+
 
 // Initialize and run appropriate functions based on the page
 document.addEventListener('DOMContentLoaded', function () {

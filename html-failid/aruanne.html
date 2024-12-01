@@ -9,6 +9,73 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital@0;1&family=Oswald:wght@500&family=Source+Code+Pro:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .chart-title {
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: #2C3E50;
+            margin-bottom: 10px;
+        }
+
+        .detailed-table-container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            max-height: 300px; /* Piirame maksimaalse kõrguse */
+            overflow-y: auto; /* Lisame vertikaalse kerimise ainult sisule */
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .detailed-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 14px;
+        }
+
+        .detailed-table thead {
+            position: sticky;
+            top: 0; /* Päis jääb alati nähtavaks */
+            background-color: #F5C28B; /* Päise taustavärv */
+            z-index: 1;
+        }
+
+        .detailed-table th,
+        .detailed-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            line-height: 1.5; /* Lahtri sisu korrektne joondus */
+        }
+
+        .detailed-table th {
+            height: 50px; /* Päiserea kõrgus */
+            color: #333;
+            font-weight: bold;
+        }
+
+        .detailed-table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .detailed-table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -21,30 +88,121 @@
                 </div>
             </nav>
             <div class="content-aruanne">
-                <!-- Siin on iga lehekülje ainulaadne sisu -->
+                <!-- Lehe pealkiri -->
                 <h1>Aruande kuvamine</h1>
-                    <!-- Tabel, kust näeb sissetulekuid ja väljaminekuid -->
-                    <div class="transaction">
-                        <div>
 
-                        </div>
-                        <h2 class="transaction-table-intro">Hiljutised tehingud</h2>
-                        <table class="transaction-table">
-                            <thead>
-                                <tr>
-                                    <th>Kuupäev</th>
-                                    <th>Kirjeldus</th>
-                                    <th>Kogus</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Hoida tühjana, siia lisatakse JS abil tulud/kulud  -->
-                            </tbody>
-                        </table>
-                    </div>
+                <!-- Sõõrikgraafiku konteiner -->
+                <div class="chart-container">
+                    <div class="chart-title">Tulu ja Kulu Võrdlus</div>
+                    <canvas id="myChart" width="400" height="400"></canvas>
+                </div>
+
+                <!-- Tabeli pealkiri -->
+                <div class="chart-title">Hiljutised tehingud</div>
+
+                <!-- Detailse tabeli konteiner -->
+                <div class="detailed-table-container">
+                    <table class="detailed-table">
+                        <thead>
+                            <tr>
+                                <th>Tüüp</th>
+                                <th>Kirjeldus</th>
+                                <th>Kogus (€)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="detailed-table-body">
+                            <!-- JS lisab andmed siia -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
-    <script src="../js_failid/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const transactions = JSON.parse(localStorage.getItem('transactions')) || [
+                { type: 'income', amount: 500, description: 'Palk' },
+                { type: 'expense', amount: 300, description: 'Toit' },
+                { type: 'income', amount: 200, description: 'Lisatöö' },
+                { type: 'expense', amount: 100, description: 'Kohvik' }
+            ];
+
+            let income = 0;
+            let expense = 0;
+
+            transactions.forEach(transaction => {
+                if (transaction.type === 'income') {
+                    income += parseFloat(transaction.amount);
+                } else if (transaction.type === 'expense') {
+                    expense += parseFloat(transaction.amount);
+                }
+            });
+
+            const ctx = document.getElementById('myChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Tulu', 'Kulu'],
+                    datasets: [{
+                        data: [income, expense],
+                        backgroundColor: ['#F5C28B', '#7F8C8D'],
+                        hoverBackgroundColor: ['#E2A970', '#5C5E5E'],
+                        borderColor: '#ffffff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: {
+                                    size: 14,
+                                    family: "'Libre Franklin', sans-serif"
+                                },
+                                color: '#2C3E50'
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    const label = context.label || '';
+                                    const value = context.raw || 0;
+                                    return `${label}: ${value.toFixed(2)}€`;
+                                }
+                            }
+                        }
+                    },
+                    layout: {
+                        padding: {
+                            top: 20,
+                            bottom: 20
+                        }
+                    },
+                    cutout: '60%'
+                }
+            });
+
+            const detailedTableBody = document.getElementById('detailed-table-body');
+            transactions.forEach(transaction => {
+                const row = document.createElement('tr');
+
+                const typeCell = document.createElement('td');
+                typeCell.textContent = transaction.type === 'income' ? 'Tulu' : 'Kulu';
+                row.appendChild(typeCell);
+
+                const descriptionCell = document.createElement('td');
+                descriptionCell.textContent = transaction.description;
+                row.appendChild(descriptionCell);
+
+                const amountCell = document.createElement('td');
+                amountCell.textContent = `${transaction.amount.toFixed(2)}€`;
+                row.appendChild(amountCell);
+
+                detailedTableBody.appendChild(row);
+            });
+        });
+    </script>
 </body>
 </html>
