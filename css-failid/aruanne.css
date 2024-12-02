@@ -1,4 +1,4 @@
-.transaction {
+/* .transaction {
     margin-left: 25px;
     margin-right: 25px;
   }
@@ -27,4 +27,69 @@
   
   .expense {
     color: red;
-  }
+  } */
+
+  .chart-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.chart-title {
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #2C3E50;
+    margin-bottom: 10px;
+}
+
+.detailed-table-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-height: 300px; /* Piirame maksimaalse kõrguse */
+    overflow-y: auto; /* Lisame vertikaalse kerimise ainult sisule */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.detailed-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 14px;
+}
+
+.detailed-table thead {
+    position: sticky;
+    top: 0; /* Päis jääb alati nähtavaks */
+    background-color: #F5C28B; /* Päise taustavärv */
+    z-index: 1;
+}
+
+.detailed-table th,
+.detailed-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    line-height: 1.5; /* Lahtri sisu korrektne joondus */
+}
+
+.detailed-table th {
+    height: 50px; /* Päiserea kõrgus */
+    color: #333;
+    font-weight: bold;
+}
+
+.detailed-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.detailed-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
