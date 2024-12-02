@@ -30,7 +30,7 @@
   width: 60%;
 }
 
-.calculate-button, .reset-data{
+.calculate-button{
   font-size: 35px;
   background-color: burlywood;
   border: none;
@@ -40,6 +40,7 @@
   transition: all 0.3s;
   box-shadow: 2px 1px 2px;
   cursor: pointer;
+  font-style: italic;
 }
 
 .result {
@@ -47,7 +48,7 @@
   text-align: center;
 }
 
-.calculate-button:hover, .reset-data:hover{
+.calculate-button:hover{
   background-color: rgb(224, 198, 163);
 }
 

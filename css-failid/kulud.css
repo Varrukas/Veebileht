@@ -61,6 +61,7 @@ input::-webkit-inner-spin-button {
     box-shadow: 0 8px rgba(0, 0, 0, 0.3);
     margin-bottom: 30px;
     transition: all 0.3s;
+    font-style: italic;
 }
 
 .buttons-style:hover{

@@ -1,4 +1,6 @@
-// script.js
+// Viited:
+//
+
 
 // Initialize and run appropriate functions based on the page
 document.addEventListener('DOMContentLoaded', function () {
