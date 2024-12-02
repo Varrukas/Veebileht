@@ -18,7 +18,8 @@ Sai kirjutatud enne JS'i. Lõime ühise HTML struktuuri, igal HTML lehel oli oma
 CSS failid on eraldatud kaheks, ühine, et vältida koodi kopeerimist ning individuaalne CSS fail igale lehele.
 
 Javascript:
-Andsime sisse tehisintellektile oma enda kirjutatud HTML koodi ning kirjeldasime soovitud funktsionaalsust.
+Andsime sisse tehisintellektile oma enda kirjutatud HTML ja CSS koodi ning kirjeldasime soovitud funktsionaalsust.
+Kuid mõne asja puhul pidi ka tegema muudatusi HTML failides, et meie soovitud nägemus lehest töötaks.
 Viited asuvad script.js kohe alguses.
 
 Hoiustamine ja versioonihaldus:
