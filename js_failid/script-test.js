@@ -1,4 +1,4 @@
-// script.js
+// TEST JS FAIL
 
 // Initialize and run appropriate functions based on the page
 document.addEventListener('DOMContentLoaded', function () {
