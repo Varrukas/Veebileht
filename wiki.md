@@ -15,6 +15,7 @@ Tööprotsess:
 
 HTML ja CSS:
 Sai kirjutatud enne JS'i. Lõime ühise HTML struktuuri, igal HTML lehel oli oma individuaalne sisu sektsioon.
+CSS failid on eraldatud kaheks, ühine, et vältida koodi kopeerimist ning individuaalne CSS fail igale lehele.
 
 Javascript:
 Andsime sisse tehisintellektile oma enda kirjutatud HTML koodi ning kirjeldasime soovitud funktsionaalsust.
