@@ -6,7 +6,8 @@
 // https://chatgpt.com/share/674ded66-f47c-800b-becc-1139f7d1f7d9 Autor: Marek
 
 // Aruande lehel olev sõõriku graafik ning kulusi ja tulusi kajastav tabel.
-// Autor: Marten
+// Doc fail GPT logidest, kuna vestluse link oli katkine.
+// https://docs.google.com/document/d/1kHev-Dz5na5Fz7hY12SlRMsF-2cDx7SBs-rZNOqHsPo/edit?tab=t.0 Autor: Marten
 
 
 // Lähtestame ja käivitame vastavad funktsioonid sõltuvalt leheküljest
