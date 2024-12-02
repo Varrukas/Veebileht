@@ -52,6 +52,7 @@ body{
     transition: all 0.3s;
     font-size: 30px;
     display: inline-block;
+    font-weight: 700;
 }
 
 .links a:hover{
