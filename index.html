@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avaleht</title>
-    <link rel="stylesheet" href="/css-failid/avaleht.css"type="text/css">
+    <link rel="stylesheet" href="/css-failid/avaleht.css" type="text/css">
     <link rel="stylesheet" href="/css-failid/ühine.css" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,12 +27,16 @@
 
                 <!-- Säästmise kalkulaator -->
                 <form class="savings-input">
+        
                     <label for="monthly-income">Sisesta oma kuu sissetulek (€):</label><br>
-                    <input type="number" class="input-field income" placeholder="Näiteks: 1500" step="any" min="0" required><br>
+                    <input type="number" class="input-field income" id="monthly-income" placeholder="Näiteks: 1500" step="any" min="0" required><br>
+
                     <label for="savings-goal">Sisesta oma säästmise eesmärk (€):</label><br>
-                    <input type="number" class="input-field goal" placeholder="Näiteks: 5000" step="any" min="0" required><br>
+                    <input type="number" class="input-field goal" id="savings-goal" placeholder="Näiteks: 5000" step="any" min="0" required><br>
+
                     <label for="savings-percent">Protsent sissetulekust säästmiseks (%):</label><br>
-                    <input type="number" class="input-field percent" placeholder="Näiteks: 20" step="any" min="0" max="100" required><br>
+                    <input type="number" class="input-field percent" id="savings-percent" placeholder="Näiteks: 20" step="any" min="0" max="100" required><br>
+
                     <button type="button" class="calculate-button">Arvuta</button>
                 </form>
                 <!-- Tulemuse kuvamiseks koht -->
