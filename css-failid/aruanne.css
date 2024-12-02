@@ -1,40 +1,10 @@
-  /* .transaction {
-      margin-left: 25px;
-      margin-right: 25px;
-    }
-
-    .transaction-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-      margin-bottom: 25px;
-      margin-right: 25px;
-    }
-    
-    .transaction-table th, .transaction-table td {
-      border-bottom: 1px solid #ddd;
-      text-align: left;
-      padding: 10px;
-    }
-    
-    .transaction-table tr:hover {
-      background-color: #f9f9f9;
-    }
-    
-    .income {
-      color: green;
-    }
-    
-    .expense {
-      color: red;
-    } */
-
 .content-aruanne{
   position: relative;
 }
 
 .chart-container {
     margin-top: 30px;
+    margin-left: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,10 +17,36 @@
     font-weight: bold;
     color: #2C3E50;
     margin-bottom: 10px;
+    margin-left: 30px;
+}
+
+.reset-data{
+  font-size: 25px;
+  border-radius: 10px;
+  padding: 10px 15px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  background-color: rgb(212, 182, 143);
+  box-shadow: 0 8px rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px;
+  transition: all 0.3s;
+  margin-left: 30px;
+}
+
+.reset-data:hover{
+  background-color: rgb(189, 163, 128);
+}
+
+.reset-data:active{
+  background-color: rgb(189, 163, 128);
+  box-shadow: 0 4px rgba(0, 0, 0, 0.5);
+  transform: translateY(4px);
 }
 
 .detailed-table-container {
     margin-top: 30px;
+    margin-left: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
