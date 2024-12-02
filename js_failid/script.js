@@ -1,8 +1,15 @@
 // Viited:
-//
+// Algne funktsionaalsus, nüüdseks aegunud, kuid kasutame reset button funktsionaalsust.
+// https://chatgpt.com/share/674dee9e-7364-800c-bd23-3d118c738673 Autor: Patrick
+// 
+// Esilehel olev kalkulaator.
+// https://chatgpt.com/share/674ded66-f47c-800b-becc-1139f7d1f7d9 Autor: Marek
+
+// Aruande lehel olev sõõriku graafik ning kulusi ja tulusi kajastav tabel.
+// Autor: Marten
 
 
-// Initialize and run appropriate functions based on the page
+// Lähtestame ja käivitame vastavad funktsioonid sõltuvalt leheküljest
 document.addEventListener('DOMContentLoaded', function () {
     initializeData();
     handleBudgetSubmission();
@@ -49,7 +56,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// Teie olemasolevad funktsioonid
+// Initsialeerime andmed localStorage'is
+// Seame tehingute listi tühjaks järjendiks
+// Eelarvet seame 0
 function initializeData() {
     if (localStorage.getItem('budget') === null) {
         localStorage.setItem('budget', '0');
@@ -60,6 +69,7 @@ function initializeData() {
     }
 }
 
+// Seadistame eelarve vormi loogika
 function handleBudgetSubmission() {
     const budgetForm = document.querySelector('.budget-input');
     if (budgetForm) {
@@ -67,7 +77,6 @@ function handleBudgetSubmission() {
             e.preventDefault();
             const budgetValue = document.querySelector('.budget-value').value;
 
-            // Input validation
             if (!budgetValue || isNaN(budgetValue) || parseFloat(budgetValue) <= 0) {
                 alert('Palun sisestage korrektne eelarve summa.');
                 return;
@@ -80,6 +89,7 @@ function handleBudgetSubmission() {
     }
 }
 
+// Anname nupule andmete lähtestamise funktsionaalsuse
 function handleDataReset() {
     const resetButton = document.querySelector('.reset-data');
     if (resetButton) {
@@ -93,17 +103,17 @@ function handleDataReset() {
     }
 }
 
+// Käsitleme kulude ja tulude lisamise nuppe ning lisame neile soovitud funktsionaalsuse
 function handleExpenseSubmission() {
     const expenseForm = document.querySelector('.profit-expense-inputs');
     if (expenseForm) {
-        // Handle adding expense
+        // Kulu lisamine
         const addExpenseButton = document.querySelector('.add-expense-button');
         addExpenseButton.addEventListener('click', function (e) {
             e.preventDefault();
             const expenseValue = document.querySelector('.expense-value').value;
             const expenseDescription = document.querySelector('.expense-description').value.trim();
 
-            // Input validation for expense
             if (!expenseValue || isNaN(expenseValue) || parseFloat(expenseValue) <= 0) {
                 alert('Palun sisestage korrektne kulu summa.');
                 return;
@@ -129,14 +139,13 @@ function handleExpenseSubmission() {
             expenseForm.reset();
         });
 
-        // Handle adding income
+        // Tulu lisamine
         const addProfitButton = document.querySelector('.add-profit-button');
         addProfitButton.addEventListener('click', function (e) {
             e.preventDefault();
             const profitValue = document.querySelector('.profit-value').value;
             const profitDescription = document.querySelector('.profit-description').value.trim();
 
-            // Input validation for income
             if (!profitValue || isNaN(profitValue) || parseFloat(profitValue) <= 0) {
                 alert('Palun sisestage korrektne tulu summa.');
                 return;
@@ -164,6 +173,8 @@ function handleExpenseSubmission() {
     }
 }
 
+// Kogume andmed sisestustest, mis asuvad localStorage'is, arvutame nende põhjal vajalikud summad
+// ja genereerime graafiku
 function displayReport() {
     const chartCanvas = document.getElementById('myChart'); // Muudetud vastavalt teie HTML-le
     if (!chartCanvas) {
@@ -171,10 +182,8 @@ function displayReport() {
         return;
     }
 
-    // Andmete saamine localStorage-st
     const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
 
-    // Andmete ettevalmistamine
     let income = 0;
     let expense = 0;
 
